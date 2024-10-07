@@ -40,5 +40,5 @@
     ]
   },
   // "proxy": "http://localhost:7700"
-  "proxy": "http://digital-boost-landing-page-frontend.vercel.app"
+  "proxy": "https://digital-boost-landing-page-frontend.vercel.app/"
 }

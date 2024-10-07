@@ -26,7 +26,7 @@ mongoose.connection.on("disconnected", () => {
 
 // middleware
 app.use(cors({
-    origin: 'http://localhost:3000', // Allow only this origin
+    origin: 'http://digital-boost-landing-page-frontend.vercel.app', // Allow only this origin
     methods: 'GET,POST,PUT,DELETE',
     credentials: true, // Allow cookies if needed
 }));

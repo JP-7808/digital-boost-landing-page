@@ -39,5 +39,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:7700"
+  // "proxy": "http://localhost:7700"
+  "proxy": "http://digital-boost-landing-page-frontend.vercel.app"
 }

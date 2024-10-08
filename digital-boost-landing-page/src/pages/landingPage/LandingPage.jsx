@@ -20,7 +20,7 @@ const LandingPage = () => {
       once: true,
     });
 
-}, []);
+  }, []);
 
   return (
     <div>

@@ -13,7 +13,7 @@ import BlogPosts from '../../components/blogPosts/BlogPosts';
 import FaqSection from '../../components/faqSection/FaqSection';
 
 const LandingPage = () => {
-  const GA_MEASUREMENT_ID = 'G-9NPPTLX31F';
+  const GA_MEASUREMENT_ID = 'G-WSBQT2W7JW';
 
   // Initialize AOS when the component mounts
   useEffect(() => {

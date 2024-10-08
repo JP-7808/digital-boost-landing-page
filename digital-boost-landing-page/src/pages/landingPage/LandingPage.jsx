@@ -27,8 +27,17 @@ const LandingPage = () => {
 
     // Track the initial pageview
     ReactGA.pageview(window.location.pathname);
-    console.log("GA Pageview tracked: ", window.location.pathname + window.location.search); // Add this line
-}, []);
+    console.log("GA Pageview tracked: ", window.location.pathname + window.location.search);
+  }, []);
+
+  // Function to track button click
+  const trackButtonClick = () => {
+    ReactGA.event({
+      category: 'User',
+      action: 'Clicked Test Button',
+    });
+    console.log('Button click tracked');
+  };
 
   return (
     <div>
@@ -42,6 +51,11 @@ const LandingPage = () => {
       </div>
       <BlogPosts data-aos="fade-in" />
       <FaqSection data-aos="zoom-in" />
+
+      {/* Button for testing GA event tracking */}
+      <div style={{ textAlign: 'center', margin: '20px 0' }}>
+        <button onClick={trackButtonClick}>Test GA Event</button>
+      </div>
     </div>
   );
 };

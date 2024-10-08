@@ -18,8 +18,8 @@ const LandingPage = () => {
   // Initialize AOS when the component mounts
   useEffect(() => {
     AOS.init({
-      duration: 2500, // Animation duration in milliseconds
-      once: true, // Animation happens only once
+      duration: 2500,
+      once: true,
     });
 
     // Initialize Google Analytics
@@ -27,8 +27,8 @@ const LandingPage = () => {
 
     // Track the initial pageview
     ReactGA.pageview(window.location.pathname + window.location.search);
-
-  }, []);
+    console.log("GA Pageview tracked: ", window.location.pathname + window.location.search); // Add this line
+}, []);
 
   return (
     <div>

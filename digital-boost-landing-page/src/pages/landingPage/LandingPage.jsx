@@ -26,7 +26,7 @@ const LandingPage = () => {
     ReactGA.initialize(GA_MEASUREMENT_ID);
 
     // Track the initial pageview
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.pageview(window.location.pathname);
     console.log("GA Pageview tracked: ", window.location.pathname + window.location.search); // Add this line
 }, []);
 

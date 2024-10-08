@@ -53,7 +53,7 @@ const ContactForm = () => {
             <div className="contact-container">
                 {/* First half with image */}
                 <div className="contact-image">
-                    <img src={digitalBoost} alt="Contact" />
+                    <img src={digitalBoost} alt="Contact" loading='lazy'/>
                 </div>
 
                 {/* Second half with contact form */}

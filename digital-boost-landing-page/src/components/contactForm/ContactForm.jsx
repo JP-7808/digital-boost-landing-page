@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './contactForm.css'; // Ensure you have the correct styles
 import digitalBoost from '../../photos/digitalBoost.webp';
+import ReactGA from 'react-ga'; // Import ReactGA
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -26,6 +27,14 @@ const ContactForm = () => {
             const response = await axios.post('/api/contact/submit', formData);
             console.log('Form submitted:', response.data);
             setStatus('Message sent successfully!');
+
+            // Google Analytics event tracking for form submission
+            ReactGA.event({
+                category: 'Form',
+                action: 'Submit',
+                label: 'Contact Form'
+            });
+
             setFormData({
                 name: '',
                 companyName: '',

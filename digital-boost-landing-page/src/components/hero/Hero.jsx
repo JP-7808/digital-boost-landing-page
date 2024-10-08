@@ -1,11 +1,19 @@
 import './hero.css';
 import React from 'react';
+import ReactGA from 'react-ga';
 
 const Hero = (props) => {
     const handleScroll = () => {
         const contactSection = document.getElementById('contact');
         if (contactSection) {
             contactSection.scrollIntoView({ behavior: 'smooth' });
+
+            // Track the click event in Google Analytics
+            ReactGA.event({
+                category: 'CTA',
+                action: 'Click',
+                label: 'Get Started Button'
+            });
         }
     };
 

@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import './landingPage.css';
-import AOS from 'aos'; // Import AOS
-import 'aos/dist/aos.css'; // Import AOS styles
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import ReactGA from 'react-ga'; // Import ReactGA for event tracking
 import Hero from '../../components/hero/Hero';
 import Navbar from '../../components/navbar/Navbar';
 import Features from '../../components/features/Features';
@@ -13,12 +14,55 @@ import FaqSection from '../../components/faqSection/FaqSection';
 
 const LandingPage = () => {
 
-  // Initialize AOS when the component mounts
+  // Scroll Depth Tracking
   useEffect(() => {
     AOS.init({
       duration: 2500,
       once: true,
     });
+
+    // Track scroll depth
+    const handleScroll = () => {
+      const scrollDepth = Math.floor((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+
+      // Trigger GA event at specific scroll depths (e.g., 25%, 50%, 75%, 100%)
+      if (scrollDepth >= 25) {
+        ReactGA.event({
+          category: 'User Engagement',
+          action: 'Scrolled 25% of the page',
+          label: 'Landing Page'
+        });
+      }
+      if (scrollDepth >= 50) {
+        ReactGA.event({
+          category: 'User Engagement',
+          action: 'Scrolled 50% of the page',
+          label: 'Landing Page'
+        });
+      }
+      if (scrollDepth >= 75) {
+        ReactGA.event({
+          category: 'User Engagement',
+          action: 'Scrolled 75% of the page',
+          label: 'Landing Page'
+        });
+      }
+      if (scrollDepth >= 100) {
+        ReactGA.event({
+          category: 'User Engagement',
+          action: 'Scrolled 100% of the page',
+          label: 'Landing Page'
+        });
+      }
+    };
+
+    // Attach the scroll listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the scroll listener when the component is unmounted
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
 
   }, []);
 

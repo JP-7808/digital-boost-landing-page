@@ -16,6 +16,23 @@ const AnalyticsTracker = () => {
     // Track page view
     ReactGA.pageview(location.pathname + location.search);
     console.log("GA Pageview tracked: ", location.pathname + location.search);
+
+    // Custom Dimensions Example (Tracking device type)
+    const deviceType = window.innerWidth <= 768 ? 'Mobile' : 'Desktop';
+    ReactGA.set({ dimension1: deviceType });
+
+    // Example of User Timing: track time to load the page
+    const startTime = performance.now();
+    window.addEventListener('load', () => {
+      const loadTime = performance.now() - startTime;
+      ReactGA.timing({
+        category: 'JS Libraries',
+        variable: 'load',
+        value: Math.round(loadTime), // Load time in milliseconds
+        label: 'Landing Page Load'
+      });
+    });
+
   }, [location]);
 
   return null; // No UI rendered for this component

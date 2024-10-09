@@ -25,7 +25,7 @@ const ContactForm = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('/api/contact/submit', formData);
+            const response = await axios.post('https://digital-boost-landing-page-backend.onrender.com/api/contact/submit', formData);
             console.log('Form submitted:', response.data);
             setStatus('Message sent successfully!');
 

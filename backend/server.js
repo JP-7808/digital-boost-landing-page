@@ -26,9 +26,9 @@ mongoose.connection.on("disconnected", () => {
 
 // middleware
 app.use(cors({
-    origin: 'https://digital-boost-landing-page-frontend.vercel.app/', // Allow only this origin
+    origin: 'https://digital-boost-landing-page-frontend.vercel.app', // Make sure this is without a trailing slash
     methods: 'GET,POST,PUT,DELETE',
-    credentials: true, // Allow cookies if needed
+    credentials: true,
 }));
 
 app.use(express.json());

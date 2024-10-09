@@ -3,7 +3,7 @@ import axios from 'axios';
 import './contactForm.css'; 
 import digitalBoost from '../../photos/digitalBoost.webp';
 import ReactGA from 'react-ga'; 
-import {LazyLoadImage} from 'react-lazy-load-image-component';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -15,6 +15,7 @@ const ContactForm = () => {
     });
 
     const [status, setStatus] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false); 
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -23,6 +24,7 @@ const ContactForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSubmitting(true); 
 
         try {
             const response = await axios.post('https://digital-boost-landing-page-backend.onrender.com/api/contact/submit', formData);
@@ -44,8 +46,10 @@ const ContactForm = () => {
                 message: ''
             });
         } catch (error) {
-            console.error('There was an error submitting the form:', error);
+            console.error('There was an error submitting the form:', error.response ? error.response.data : error.message);
             setStatus('Failed to send message. Please try again.');
+        } finally {
+            setIsSubmitting(false); 
         }
     };
 
@@ -116,7 +120,9 @@ const ContactForm = () => {
                                     required
                                 />
                             </div>
-                            <button type="submit">Send Message</button>
+                            <button type="submit" disabled={isSubmitting}>
+                                {isSubmitting ? 'Sending...' : 'Send Message'}
+                            </button>
                         </form>
 
                         {status && <p className="status-message">{status}</p>}

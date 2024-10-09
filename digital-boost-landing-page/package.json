@@ -41,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:7700"
+  "proxy": "https://digital-boost-landing-page-backend.onrender.com"
 }

@@ -4,10 +4,11 @@
     background-color: #e2f0f3;
 }
 
-.case-studies h2 {
+.case-studies h1 {
     text-align: center;
     margin-bottom: 2rem;
     color: #333;
+    font-size:xx-large;
 }
 
 .case-studies-container {
@@ -52,6 +53,10 @@
 .case-study-info p {
     color: #666;
     margin: 0.5rem 0;
+    background-color: rgb(232, 247, 247);
+    border-radius: 3px;
+    padding: 10px 5px 10px 5px;
+    color: rgb(241, 199, 73);
 }
 
 .case-study-info strong {

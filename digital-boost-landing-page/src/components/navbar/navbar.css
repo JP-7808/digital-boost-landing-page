@@ -51,9 +51,9 @@
     color: #00fffb;
 }
 
-/* Hamburger Menu */
+
 .navbar-toggle {
-    display: none; /* Hide toggle button on larger screens */
+    display: none; 
     flex-direction: column;
     cursor: pointer;
 }
@@ -68,28 +68,28 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
     .navbar-links {
-        display: none; /* Hide links by default */
+        display: none; 
         position: absolute;
-        top: 60px; /* Adjust based on navbar height */
+        top: 60px; 
         right: 0;
         background-color: #333;
-        width: 100%; /* Full width */
-        flex-direction: column; /* Stack links vertically */
-        padding: 1rem 0; /* Padding for links */
-        z-index: 1000; /* Ensure links are above other content */
+        width: 100%; 
+        flex-direction: column; 
+        padding: 1rem 0; 
+        z-index: 1000; 
     }
 
     .navbar-links.open {
-        display: flex; /* Show links when open */
+        display: flex; 
     }
 
     .navbar-toggle {
-        display: flex; /* Show toggle button on smaller screens */
+        display: flex; 
     }
 
     .navbar-links a {
-        padding: 1rem; /* Increase padding for mobile view */
-        width: 100%; /* Full width for links in mobile view */
-        text-align: center; /* Center text */
+        padding: 1rem; 
+        width: 100%; 
+        text-align: center; 
     }
 }

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './contactForm.css'; // Ensure you have the correct styles
+import './contactForm.css'; 
 import digitalBoost from '../../photos/digitalBoost.webp';
-import ReactGA from 'react-ga'; // Import ReactGA
+import ReactGA from 'react-ga'; 
+import {LazyLoadImage} from 'react-lazy-load-image-component';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -53,7 +54,7 @@ const ContactForm = () => {
             <div className="contact-container">
                 {/* First half with image */}
                 <div className="contact-image">
-                    <img src={digitalBoost} alt="Contact" loading='lazy'/>
+                    <LazyLoadImage src={digitalBoost} alt="img" />
                 </div>
 
                 {/* Second half with contact form */}

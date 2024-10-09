@@ -4,7 +4,7 @@ import ReactGA from 'react-ga';
 import LandingPage from './pages/landingPage/LandingPage';
 import ContactForm from './components/contactForm/ContactForm';
 
-const GA_MEASUREMENT_ID = 'G-WSBQT2W7JW'; // Replace with your actual measurement ID
+const GA_MEASUREMENT_ID = 'G-WSBQT2W7JW'; 
 
 const AnalyticsTracker = () => {
   const location = useLocation();
@@ -21,21 +21,21 @@ const AnalyticsTracker = () => {
     const deviceType = window.innerWidth <= 768 ? 'Mobile' : 'Desktop';
     ReactGA.set({ dimension1: deviceType });
 
-    // Example of User Timing: track time to load the page
+    // track time to load the page
     const startTime = performance.now();
     window.addEventListener('load', () => {
       const loadTime = performance.now() - startTime;
       ReactGA.timing({
         category: 'JS Libraries',
         variable: 'load',
-        value: Math.round(loadTime), // Load time in milliseconds
+        value: Math.round(loadTime), 
         label: 'Landing Page Load'
       });
     });
 
   }, [location]);
 
-  return null; // No UI rendered for this component
+  return null; 
 };
 
 function App() {

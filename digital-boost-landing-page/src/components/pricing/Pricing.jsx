@@ -1,6 +1,5 @@
 import React from 'react';
 import './pricing.css';
-import { Link } from 'react-router-dom'; // Use Link for navigation
 
 const pricingPlans = [
     {
@@ -14,7 +13,7 @@ const pricingPlans = [
         price: '$199/month',
         features: ['Everything in Basic', 'PPC Management', '24/7 Support'],
         link: '/contact',
-        isPopular: true, // Marks this as the popular plan
+        isPopular: true, 
     },
     {
         title: 'Premium',

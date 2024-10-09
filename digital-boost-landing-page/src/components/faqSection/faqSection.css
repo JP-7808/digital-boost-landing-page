@@ -18,7 +18,7 @@
   }
   
   .faq.active {
-    background-color: #5a0172;
+    background-color: #e4b4f2;
     color: white;
   }
   
@@ -36,6 +36,11 @@
     display: block;
   }
   
+  .faq:hover{
+    transform: scale(1.03);
+    transition: ease 0.3s;
+  }
+
   @media (max-width: 768px) {
     .faq-section {
       padding: 40px;

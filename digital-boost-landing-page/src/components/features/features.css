@@ -31,11 +31,18 @@
 
 .feature-card h3{
     color: rgb(92, 92, 255);
+    margin-bottom: 10px;
 }
 
 .feature-card p{
     margin-bottom: 2px;
     color: #333;
+    font-size: medium;
+    background-color: rgb(233, 249, 252);
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 4px rgba(148, 202, 209, 0.356);
+    padding: 10px 5px 10px 5px;
+
 }
 
 .feature-card:hover {

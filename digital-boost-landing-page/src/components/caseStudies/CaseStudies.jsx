@@ -3,6 +3,7 @@ import './caseStudies.css';
 import socialMediaEngagment from '../../photos/socialMediaEngagment.jpeg';
 import organicTraffic from '../../photos/organicTraffic.jpg';
 import paidAdCampaigns from '../../photos/paidAdCampaigns.jpg';
+import {LazyLoadImage} from 'react-lazy-load-image-component';
 
 
 const caseStudiesData = [
@@ -32,11 +33,11 @@ const caseStudiesData = [
 const CaseStudies = (props) => {
     return (
         <div className="case-studies" data-aos={props['data-aos']}>
-            <h2>Case Studies</h2>
+            <h1>Case Studies</h1>
             <div className="case-studies-container">
                 {caseStudiesData.map((study) => (
                     <div className="case-study-card" key={study.id}>
-                        <img src={study.image} alt={study.clientName} className="case-study-image" />
+                        <LazyLoadImage src={study.image} alt={study.clientName}  className="case-study-image"  />
                         <div className="case-study-info">
                             <h3>{study.clientName}</h3>
                             <p>{study.description}</p>

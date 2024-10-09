@@ -22,7 +22,7 @@ const Hero = (props) => {
             <div className="hero-content">
                 <h1>The Digital Boost</h1>
                 <p>Maximize your business potential with our comprehensive digital marketing package. Increased brand visibility Reaching a larger audience online, improving brand recognition and awareness.</p>
-                <button className="cta-btn" onClick={handleScroll}>Get Started</button> {/* Smooth scroll */}
+                <button className="cta-btn" onClick={handleScroll}>Get Started</button> 
             </div>
         </section>
     );

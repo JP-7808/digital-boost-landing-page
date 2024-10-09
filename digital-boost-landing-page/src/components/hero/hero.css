@@ -1,4 +1,4 @@
-/* src/components/Hero.css */
+
 .hero{
     height: 91vh;
     display: flex;
@@ -14,7 +14,7 @@
   
 .hero-content {
     max-width: 900px;
-    background: rgba(0, 0, 0, 0.5); /* Adds transparency to the background */
+    background: rgba(0, 0, 0, 0.5); 
     padding: 30px;
     border-radius: 10px;
 }
@@ -30,7 +30,7 @@ p{
 }
   
 .cta-btn {
-    background-color: #ff7f50; /* Button color */
+    background-color: #ff7f50; 
     color: white;
     padding: 15px 30px;
     font-size: 1.2rem;
@@ -41,7 +41,7 @@ p{
 }
   
 .cta-btn:hover {
-    background-color: #ff5722; /* Button hover effect */
+    background-color: #ff5722; 
 }
   
 @media (max-width: 768px) {

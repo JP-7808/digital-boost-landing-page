@@ -36,6 +36,11 @@
     display: inline-block;
   }
   
+  .blog-card:hover {
+    transform: scale(1.03);
+    transition: ease 0.3s;
+  }
+
   @media (max-width: 768px) {
     .blog-container {
       flex-direction: column;

@@ -4,6 +4,8 @@ import seo from '../../photos/seo.webp';
 import socialMediaStrategy from '../../photos/socialMediaStrategy.jpg';
 import PPCManagement from '../../photos/PPCManagement.png';
 import contentCreation from '../../photos/contentCreation.webp';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css'; 
 
 const featuresData = [
     {
@@ -35,7 +37,12 @@ const Features = (props) => {
             <div className='features-container'>
                 {featuresData.map((feature, index) => (
                     <div className='feature-card' key={index}>
-                        <img src={feature.icon} alt={feature.title} className='feature-icon'/>
+                        <LazyLoadImage
+                            src={feature.icon}
+                            alt={feature.title}
+                            className='feature-icon'
+                            effect='blur'
+                        />
                         <h3>{feature.title}</h3>
                         <p>{feature.description}</p>
                     </div>

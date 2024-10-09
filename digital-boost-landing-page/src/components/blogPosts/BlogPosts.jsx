@@ -1,6 +1,7 @@
 import React from 'react';
 import './blogPosts.css';
 
+// Sample blog post data including title, date, description, and link
 const blogPosts = [
   {
     title: 'How Digital Marketing Can Transform Your Business',
@@ -42,4 +43,4 @@ const BlogPosts = (props) => {
   );
 };
 
-export default BlogPosts ;
+export default BlogPosts;

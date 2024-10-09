@@ -13,15 +13,15 @@ const AnalyticsTracker = () => {
     // Initialize Google Analytics
     ReactGA.initialize(GA_MEASUREMENT_ID);
     
-    // Track page view
+    // Track page view on location change
     ReactGA.pageview(location.pathname + location.search);
     console.log("GA Pageview tracked: ", location.pathname + location.search);
 
-    // Custom Dimensions Example (Tracking device type)
+    // Track device type as a custom dimension
     const deviceType = window.innerWidth <= 768 ? 'Mobile' : 'Desktop';
     ReactGA.set({ dimension1: deviceType });
 
-    // track time to load the page
+    // Track time taken to load the page
     const startTime = performance.now();
     window.addEventListener('load', () => {
       const loadTime = performance.now() - startTime;
@@ -33,18 +33,18 @@ const AnalyticsTracker = () => {
       });
     });
 
-  }, [location]);
+  }, [location]); // Effect runs on location change
 
-  return null; 
+  return null; // No visual output from this component
 };
 
 function App() {
   return (
     <BrowserRouter>
-      <AnalyticsTracker />
+      <AnalyticsTracker /> {/* Track analytics */}
       <Routes>
-        <Route path='/' element={<LandingPage />} />
-        <Route path='/contact' element={<ContactForm />} />
+        <Route path='/' element={<LandingPage />} /> {/* Main landing page route */}
+        <Route path='/contact' element={<ContactForm />} /> {/* Contact form route */}
       </Routes>
     </BrowserRouter>
   );

@@ -8,36 +8,36 @@ dotenv.config();
 const app = express();
 const PORT = 7700;
 
-
+// Connect to MongoDB
 const connect = async () => {
-    try{
+    try {
         await mongoose.connect(process.env.MONGO_URI);
         console.log("Connected to MongoDB.");
-
-    }catch(error){
-        console.error("Error connecting to mongoDb: ", error);
+    } catch (error) {
+        console.error("Error connecting to MongoDB: ", error);
         throw error;
     }
-}
+};
 
+// Handle MongoDB disconnection
 mongoose.connection.on("disconnected", () => {
-    console.log("MongoDb Disconnected");
-})
+    console.log("MongoDB Disconnected");
+});
 
-// middleware
+// Middleware
 app.use(cors({
-    origin: 'https://digital-boost-landing-page-frontend.vercel.app', // Make sure this is without a trailing slash
-    methods: 'GET,POST,PUT,DELETE',
-    credentials: true,
+    origin: 'https://digital-boost-landing-page-frontend.vercel.app', // Allow requests from this origin
+    methods: 'GET,POST,PUT,DELETE', // Allow these HTTP methods
+    credentials: true, // Allow credentials (e.g., cookies)
 }));
 
-app.use(express.json());
+app.use(express.json()); // Parse incoming JSON requests
 
 // Routes
-app.use('/api/contact', contactRoute);
+app.use('/api/contact', contactRoute); // Contact route
 
-
+// Start server and connect to MongoDB
 app.listen(PORT, () => {
     connect();
-    console.log(`server is running on port ${PORT}`);
-})
+    console.log(`Server is running on port ${PORT}`);
+});

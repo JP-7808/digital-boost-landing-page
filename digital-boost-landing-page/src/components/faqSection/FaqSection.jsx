@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './faqSection.css';
 
+// Array of FAQs with questions and answers
 const faqs = [
   {
     question: 'What is included in "The Digital Boost" package?',
@@ -17,8 +18,10 @@ const faqs = [
 ];
 
 const FaqSection = (props) => {
+  // State to track the currently active FAQ
   const [activeIndex, setActiveIndex] = useState(null);
 
+  // Toggles the visibility of the answer for the selected FAQ
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };

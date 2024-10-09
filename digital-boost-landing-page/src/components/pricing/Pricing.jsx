@@ -1,13 +1,16 @@
 import React from 'react';
 import './pricing.css';
 
+// Pricing plans array with details for each plan
 const pricingPlans = [
+    // Basic plan details
     {
         title: 'Basic',
         price: '$99/month',
         features: ['Social Media Marketing', 'SEO Optimization', 'Email Support'],
         link: '/contact',
     },
+    // Standard plan details, marked as popular
     {
         title: 'Standard',
         price: '$199/month',
@@ -15,6 +18,7 @@ const pricingPlans = [
         link: '/contact',
         isPopular: true, 
     },
+    // Premium plan details
     {
         title: 'Premium',
         price: '$299/month',
@@ -25,6 +29,7 @@ const pricingPlans = [
 
 const Pricing = (props) => {
     
+    // Scrolls to the contact section smoothly
     const handleScroll = () => {
         const contactSection = document.getElementById('contact');
         if (contactSection) {
@@ -45,6 +50,7 @@ const Pricing = (props) => {
                                 <li key={i}>{feature}</li>
                             ))}
                         </ul>
+                        {/* Button triggers scroll to contact section */}
                         <button  className={`plan-cta ${plan.isPopular ? 'popular-cta' : ''}`}  onClick={handleScroll}>
                             Get Started
                         </button>

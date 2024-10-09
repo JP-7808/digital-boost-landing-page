@@ -5,7 +5,7 @@ import organicTraffic from '../../photos/organicTraffic.jpg';
 import paidAdCampaigns from '../../photos/paidAdCampaigns.jpg';
 import {LazyLoadImage} from 'react-lazy-load-image-component';
 
-
+// Case studies data containing client information and results
 const caseStudiesData = [
     {
         id: 1,
@@ -37,7 +37,8 @@ const CaseStudies = (props) => {
             <div className="case-studies-container">
                 {caseStudiesData.map((study) => (
                     <div className="case-study-card" key={study.id}>
-                        <LazyLoadImage src={study.image} alt={study.clientName}  className="case-study-image"  />
+                        {/* Lazy loading images for performance optimization */}
+                        <LazyLoadImage src={study.image} alt={study.clientName} className="case-study-image" />
                         <div className="case-study-info">
                             <h3>{study.clientName}</h3>
                             <p>{study.description}</p>

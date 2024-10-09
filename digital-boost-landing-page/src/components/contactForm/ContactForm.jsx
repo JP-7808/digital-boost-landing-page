@@ -6,6 +6,7 @@ import ReactGA from 'react-ga';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const ContactForm = () => {
+    // State to manage form data and submission status
     const [formData, setFormData] = useState({
         name: '',
         companyName: '',
@@ -17,11 +18,13 @@ const ContactForm = () => {
     const [status, setStatus] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false); 
 
+    // Handles input field changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
+    // Handles form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true); 
@@ -31,13 +34,14 @@ const ContactForm = () => {
             console.log('Form submitted:', response.data);
             setStatus('Message sent successfully!');
 
-            // Google Analytics event tracking for form submission
+            // Track form submission in Google Analytics
             ReactGA.event({
                 category: 'Form',
                 action: 'Submit',
                 label: 'Contact Form'
             });
 
+            // Reset form fields
             setFormData({
                 name: '',
                 companyName: '',
@@ -56,12 +60,12 @@ const ContactForm = () => {
     return (
         <section className="contact-section">
             <div className="contact-container">
-                {/* First half with image */}
+                {/* Image section */}
                 <div className="contact-image">
                     <LazyLoadImage src={digitalBoost} alt="img" />
                 </div>
 
-                {/* Second half with contact form */}
+                {/* Contact form section */}
                 <div className="contact-form-container">
                     <h1 className="contact-form-title">Contact Us</h1>
                     <p>We’d love to hear from you! Please fill out the form below.</p>
@@ -70,6 +74,7 @@ const ContactForm = () => {
                         <h2>Get in Touch</h2>
 
                         <form className="contactForm" onSubmit={handleSubmit}>
+                            {/* Input fields for user data */}
                             <div className="input-group">
                                 <input
                                     type="text"

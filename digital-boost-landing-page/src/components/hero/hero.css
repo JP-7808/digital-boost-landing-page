@@ -17,6 +17,7 @@
     background: rgba(0, 0, 0, 0.5); 
     padding: 30px;
     border-radius: 10px;
+    transition: transform 0.3s ease;
 }
   
 h1{
@@ -42,6 +43,10 @@ p{
   
 .cta-btn:hover {
     background-color: #ff5722; 
+}
+
+.hero-content:hover{
+  transform: scale(1.03);
 }
   
 @media (max-width: 768px) {

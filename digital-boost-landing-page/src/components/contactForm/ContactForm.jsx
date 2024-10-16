@@ -31,7 +31,7 @@ const ContactForm = () => {
         setIsSubmitting(true); 
 
         try {
-            const response = await axios.post(`${process.env.BACKEND_API}/api/contact/submit`, formData);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_API}/api/contact/submit`, formData);
             console.log('Form submitted:', response.data);
             setStatus('Message sent successfully!');
 

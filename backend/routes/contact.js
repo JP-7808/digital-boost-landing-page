@@ -14,4 +14,15 @@ router.post('/submit', async (req, res) => {
     }
 });
 
+// get all contact message
+router.get('/getAllMessage', async(req, res) => {
+    try{
+        const messages = await Contact.find();
+        res.status(200).json(messages);
+    }
+    catch(err){
+        res.status(500).send("Error in acheving contact data" + error.message);
+    }
+})
+
 export default router; // Export the router

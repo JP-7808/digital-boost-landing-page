@@ -6,12 +6,13 @@ import ReactGA from 'react-ga'; // Import ReactGA for event tracking
 import Hero from '../../components/hero/Hero';
 import Navbar from '../../components/navbar/Navbar';
 import Features from '../../components/features/Features';
-import CaseStudies from '../../components/caseStudies/CaseStudies';
 import Pricing from '../../components/pricing/Pricing';
 import ContactForm from '../../components/contactForm/ContactForm';
 import BlogPosts from '../../components/blogPosts/BlogPosts';
 import FaqSection from '../../components/faqSection/FaqSection';
 import Chatbot from '../../components/chatbot/Chatbot';
+import Portfolio from '../../components/portfolio/Portfolio';
+import AboutUs from '../../components/aboutUs/AboutUs';
 
 const LandingPage = () => {
 
@@ -67,14 +68,21 @@ const LandingPage = () => {
   return (
     <div>
       <Navbar />
-      <Hero data-aos="fade-in" />
+      <div id='hero' data-aos='fade-in'>
+        <Hero/>
+      </div>
       <Features data-aos="fade-up" />
-      <CaseStudies data-aos="fade-right" />
-      <Pricing data-aos="fade-left" />
+      <Portfolio data-aos="fade-right" />
+      <div id='pricing' data-aos="fade-left">
+        <Pricing/>
+      </div>
       <div id="contact" data-aos="fade-up">
         <ContactForm />
       </div>
       <BlogPosts data-aos="fade-in" />
+      <div id='aboutUs' data-aos='zoom-in'>
+         <AboutUs/>
+      </div>
       <FaqSection data-aos="zoom-in" />
       <Chatbot/>  {/* Add chatbot */}
     </div>

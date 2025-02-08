@@ -5,13 +5,13 @@ import './blogPosts.css';
 const blogPosts = [
   {
     title: 'How Digital Marketing Can Transform Your Business',
-    date: 'October 5, 2024',
+    date: 'January 5, 2025',
     description: 'Learn the key digital marketing strategies that can help small and medium businesses grow online.',
     link: '#'
   },
   {
     title: 'The Ultimate Guide to SEO in 2024',
-    date: 'September 25, 2024',
+    date: 'January 1, 2025',
     description: 'Boost your website’s visibility with these actionable SEO tips.',
     link: '#'
   },

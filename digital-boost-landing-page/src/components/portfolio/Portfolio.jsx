@@ -1,12 +1,12 @@
 import React from 'react';
-import './caseStudies.css';
+import './portfolio.css';
 import socialMediaEngagment from '../../photos/socialMediaEngagment.jpeg';
 import organicTraffic from '../../photos/organicTraffic.jpg';
 import paidAdCampaigns from '../../photos/paidAdCampaigns.jpg';
 import {LazyLoadImage} from 'react-lazy-load-image-component';
 
-// Case studies data containing client information and results
-const caseStudiesData = [
+// Portfolio data containing client information and results
+const portfolioData = [
     {
         id: 1,
         clientName: 'Dynamic Corporation',
@@ -30,12 +30,12 @@ const caseStudiesData = [
     },
 ];
 
-const CaseStudies = (props) => {
+const Portfolio = (props) => {
     return (
         <div className="case-studies" data-aos={props['data-aos']}>
-            <h1>Case Studies</h1>
+            <h1>Portfolio</h1>
             <div className="case-studies-container">
-                {caseStudiesData.map((study) => (
+                {portfolioData.map((study) => (
                     <div className="case-study-card" key={study.id}>
                         {/* Lazy loading images for performance optimization */}
                         <LazyLoadImage src={study.image} alt={study.clientName} className="case-study-image" />
@@ -51,4 +51,4 @@ const CaseStudies = (props) => {
     );
 };
 
-export default CaseStudies;
+export default Portfolio;

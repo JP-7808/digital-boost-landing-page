@@ -11,6 +11,7 @@ import Pricing from '../../components/pricing/Pricing';
 import ContactForm from '../../components/contactForm/ContactForm';
 import BlogPosts from '../../components/blogPosts/BlogPosts';
 import FaqSection from '../../components/faqSection/FaqSection';
+import Chatbot from '../../components/chatbot/Chatbot';
 
 const LandingPage = () => {
 
@@ -75,6 +76,7 @@ const LandingPage = () => {
       </div>
       <BlogPosts data-aos="fade-in" />
       <FaqSection data-aos="zoom-in" />
+      <Chatbot/>  {/* Add chatbot */}
     </div>
   );
 };

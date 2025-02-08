@@ -4,7 +4,7 @@ import axios from "axios";
 
 const Chatbot = () => {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState([{ sender: "bot", text: "Hello! Ask me anything about RITZ Media World." }]);
+  const [messages, setMessages] = useState([{ sender: "bot", text: "Hello! Ask me anything." }]);
   const [input, setInput] = useState("");
 
   const toggleChatbot = () => setOpen(!open);

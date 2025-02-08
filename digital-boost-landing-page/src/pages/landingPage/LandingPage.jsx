@@ -66,6 +66,7 @@ const LandingPage = () => {
   return (
     <div>
       <Navbar />
+      <h1>hi</h1>
       <Hero data-aos="fade-in" />
       <Features data-aos="fade-up" />
       <CaseStudies data-aos="fade-right" />
